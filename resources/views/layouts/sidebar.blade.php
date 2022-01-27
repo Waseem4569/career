@@ -94,6 +94,27 @@
                     </ul>
                 </li>
             @endcanany
+
+            {{-- career departments  --}}
+        @canany(['department-list','department-create'])
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect" href="#" id="department" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span>
+                        Job Departments
+                    </span>
+                        <i class="fa fa-plus"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="department">
+                        @can('department-create')
+                            <li><a class="dropdown-item" href="{{route('departments.create')}}">Add New</a></li>
+                        @endcan
+                        @can('department-list')
+                            <li><a class="dropdown-item" href="{{route('departments.index')}}">View All</a></li>
+                        @endcan
+                    </ul>
+                </li>
+            @endcanany
+            {{-- end career departments  --}}
         </ul>
     </nav>
 </nav>
