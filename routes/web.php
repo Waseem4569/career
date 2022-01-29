@@ -38,7 +38,7 @@ Route::group(['middleware' => ['auth','verified','IsActive','xss'],'prefix'=>'ad
     Route::resource('user',UserController::class);
     Route::get('get/users',[UserController::class,'getUsers'])->name('getUsers');
 
-    //  
+    //  Departments
     Route::resource('departments',DepartmentsController::class);
     Route::get('get/departments',[DepartmentsController::class,'getdepartment'])->name('getdepartment');
     Route::delete('department-delete/{id}' ,[DepartmentsController::class,'delete'])->name('department.delete');
@@ -51,5 +51,8 @@ Route::get('/logout', function () {
 });
 
 Route::get('/', [MainController::class,'index'])->name('index');
+
+Route::get('job-detail', [MainController::class,'detail'])->name('job-detail');
+Route::get('job-apply', [MainController::class,'apply'])->name('job-apply');
 
 require __DIR__.'/auth.php';

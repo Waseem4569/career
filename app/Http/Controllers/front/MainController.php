@@ -11,4 +11,13 @@ class MainController extends Controller
     {
         return view('frontend.index');
     }
+
+    public function detail()
+    {
+        return view('frontend.job_detail');
+    }
+    public function apply()
+    {
+        return view('frontend.job_apply');
+    }
 }
